@@ -1,0 +1,75 @@
+<!-- display_data.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Data</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+      }
+    table {
+    margin: auto;
+    text-align: left;
+    }
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  
+    a:hover {
+      background-color: #45a049;
+    }
+  </style>
+<body>
+
+  <h2>User Data</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone No</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Address 1</th>
+        <th>Address 2</th>
+        <th>Pincode</th>
+        <th>State</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in data %}
+        <tr>
+          <td>{{ data.UserInfo.first_name }}</td>
+          <td>{{ data.UserInfo.last_name }}</td>
+          <td>{{ data.UserInfo.email }}</td>
+          <td>{{ data.phone_no }}</td>
+          <td>{{ data.gender }}</td>
+          <td>{{ data.dob }}</td>
+          <td>{{ data.address1 }}</td>
+          <td>{{ data.address2 }}</td>
+          <td>{{ data.pincode }}</td>
+          <td>{{ data.state }}</td>
+          <td>{{ data.country }}</td>
+        </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+<a href="{% url 'download_data' '1' %}">Download Contact Info CSV</a>
+<a href="{% url 'download_data' '2' %}">Download Personal Info CSV</a>
+<a href="{% url 'download_data' '3' %}">Download Combined CSV</a>
+
+</body>
+</html>
