@@ -21,6 +21,6 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('AssignmetSort/',include('AssignmetSort.urls')),
+    path('', include('AssignmetSort.urls')),
     
 ]
